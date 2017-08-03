@@ -17,7 +17,7 @@ export default function wrap(target, name, wrapper) {
         return;
     }
     var wrapped = wrapper(original);
-    wrapped._wrapped = true;
+    wrapped && (wrapped._wrapped = true);
     target[name] = wrapped;
     return wrapped;
 }
